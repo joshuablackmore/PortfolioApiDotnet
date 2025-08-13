@@ -1,0 +1,6 @@
+@PortfolioApiDotnet_HostAddress = http://localhost:5007
+
+GET {{PortfolioApiDotnet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
