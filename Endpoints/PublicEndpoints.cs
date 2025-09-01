@@ -19,12 +19,24 @@ public static class PublicEndpoints
                 Intro = "I’m a full-stack software engineer and professional drummer. During the day I help build scalable, accessible web apps. After hours, I write and perform experimental music.",
                 Links = 
                 {
-                    new() { Name = "My Music", Url = "/music/my" },
-                    new() { Name = "What I'm Listening To", Url = "/music/listening" },
-                    new() { Name = "Engineering", Url = "/engineering" }
+                    new Link { Name = "My Music", Url = "/music/my" },
+                    new Link { Name = "What I'm Listening To", Url = "/music/listening" },
+                    new Link { Name = "Engineering", Url = "/engineering" }
                 }
             };
 
+            return Results.Ok(content);
+        });
+
+        group.MapGet("navigation", () => 
+        {
+            var content = new NavigationContent
+            {
+                Links = 
+                {
+                    new Link { Name = "Home", Url = "/"}
+                }
+            };
             return Results.Ok(content);
         });
 
